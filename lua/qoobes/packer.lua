@@ -47,9 +47,8 @@ return require("packer").startup(function(use)
 		},
 	})
 
-	require("luasnip.loaders.from_vscode").lazy_load({
-		paths = { "~/.config/nvim/snippets" },
-	})
+	use({ "saadparwaiz1/cmp_luasnip" })
+
 	use({ "zbirenbaum/copilot.lua" })
 
 	use("onsails/lspkind.nvim")
