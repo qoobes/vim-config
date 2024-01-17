@@ -20,6 +20,9 @@ return require("packer").startup(function(use)
 		end,
 	})
 
+  use "lunarvim/darkplus.nvim"
+  use "lunarvim/synthwave84.nvim"
+
 	-- use 'rebelot/kanagawa.nvim'
 
 	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
