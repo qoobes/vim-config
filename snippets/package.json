@@ -1,0 +1,28 @@
+{
+  "name": "Snippets I guess?",
+  "author": "Ahmed Haracic <me@qoobes.dev>",
+  "contributes": {
+    "snippets": [
+      {
+        "language": "javascript",
+        "path": "./javascript.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./typescript.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./typescriptreact.json"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "./javascriptreact.json"
+      },
+      {
+        "language": "prettier",
+        "path": "./prettier.code-snippets"
+      }
+    ]
+  }
+}
