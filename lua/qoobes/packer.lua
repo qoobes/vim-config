@@ -47,7 +47,7 @@ return require("packer").startup(function(use)
 		},
 	})
 
-	-- use { "zbirenbaum/copilot.lua", }
+	use({ "zbirenbaum/copilot.lua" })
 
 	use("onsails/lspkind.nvim")
 	use("nvim-lualine/lualine.nvim")
@@ -72,6 +72,7 @@ return require("packer").startup(function(use)
 	use("MunifTanjim/nui.nvim")
 	use("folke/noice.nvim")
 	use("tpope/vim-surround")
+	use("wakatime/vim-wakatime")
 
 	use({
 		"stevearc/conform.nvim",
