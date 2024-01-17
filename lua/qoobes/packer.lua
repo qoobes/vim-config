@@ -20,8 +20,9 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-  use "lunarvim/darkplus.nvim"
-  use "lunarvim/synthwave84.nvim"
+	use("lunarvim/darkplus.nvim")
+	use("lunarvim/synthwave84.nvim")
+	use("folke/tokyonight.nvim")
 
 	-- use 'rebelot/kanagawa.nvim'
 
