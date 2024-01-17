@@ -84,4 +84,7 @@ return require("packer").startup(function(use)
 	})
 
 	use("mattn/emmet-vim")
+
+	use({ "akinsho/bufferline.nvim", tag = "*", requires = "nvim-tree/nvim-web-devicons" })
+	use("moll/vim-bbye")
 end)
