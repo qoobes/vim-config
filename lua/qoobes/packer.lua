@@ -47,6 +47,7 @@ return require("packer").startup(function(use)
 		},
 	})
 
+	require("luasnip.loaders.from_vscode").lazy_load()
 	use({ "zbirenbaum/copilot.lua" })
 
 	use("onsails/lspkind.nvim")
