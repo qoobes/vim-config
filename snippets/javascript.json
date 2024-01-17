@@ -1,0 +1,16 @@
+{
+  "Print to console": {
+    "prefix": "clog",
+    "body": [
+      "console.log($1)"
+    ],
+    "description": "Log output to console"
+  },
+  "Import Statement": {
+    "prefix": "im",
+    "body": [
+      "import { $1 } from \"$2\""
+    ],
+    "description": "Creates import statement"
+  }
+}

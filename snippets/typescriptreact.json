@@ -1,0 +1,57 @@
+{
+  "Print to console": {
+    "prefix": "clog",
+    "body": [
+      "console.log($1)"
+    ],
+    "description": "Log output to console"
+  },
+  "Create react functional component": {
+    "prefix": "rh",
+    "body": [
+      "interface ${TM_FILENAME_BASE}Props {",
+      "$1",
+      "}",
+      "",
+      "export const $TM_FILENAME_BASE: React.FC<${TM_FILENAME_BASE}Props> = ({$2}) => {",
+      "\treturn ($3);",
+      "}"
+    ],
+    "description": "Craetes a react functional component."
+  },
+  "Error to console": {
+    "prefix": "cer",
+    "body": [
+      "console.error($1)"
+    ],
+    "description": "Log error to console"
+  },
+  "Create react functional component with Props": {
+    "prefix": "rfc",
+    "body": [
+      "interface ${TM_FILENAME_BASE}Props {",
+      "$1",
+      "}",
+      "",
+      "export const $TM_FILENAME_BASE: React.FC<${TM_FILENAME_BASE}Props> = ({$2}) => {",
+      "\treturn ($3);",
+      "}"
+    ],
+    "description": "Craetes a react functional component."
+  },
+  "Create react functional component with Props With Use Client": {
+    "prefix": "rfcc",
+    "body": [
+      "\"use client\";",
+      "",
+      "interface ${TM_FILENAME_BASE}Props {",
+      "$1",
+      "}",
+      "",
+      "export const $TM_FILENAME_BASE: React.FC<${TM_FILENAME_BASE}Props> = ({$2}) => {",
+      "\treturn ($3);",
+      "}"
+    ],
+    "description": "Craetes a react functional component."
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "Prettier config": {
+    "prefix": "prettier",
+    "body": [
+      "{ \"arrowParens\": \"always\", \"bracketSpacing\": false, \"semi\": true, \"singleQuote\": false, \"tabWidth\": 2, \"useTabs\": false, \"trailingComma\": \"es5\", \"printWidth\": 120 }"
+    ],
+    "description": "Log output to console"
+  }
+}
