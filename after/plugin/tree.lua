@@ -15,6 +15,8 @@ local function my_on_attach(bufnr)
 	vim.keymap.set("n", "<C-t>", api.tree.change_root_to_parent, opts("Up"))
 	vim.keymap.set("n", "?", api.tree.toggle_help, opts("Help"))
 	vim.keymap.set("n", "l", api.node.open.edit, opts("Open"))
+	vim.keymap.set("n", "c", api.fs.create, opts("Create file"))
+	vim.keymap.set("n", "r", api.fs.rename, opts("Rename a file"))
 end
 
 require("nvim-tree").setup({
