@@ -11,6 +11,8 @@ vim.opt.nu = true
 
 vim.opt.termguicolors = true
 vim.opt.signcolumn = "yes"
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
