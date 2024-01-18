@@ -94,8 +94,8 @@ return require("packer").startup(function(use)
 	-- 		require("conform").setup()
 	-- 	end,
 	-- })
-  --
-  use "mhartington/formatter.nvim"
+	--
+	use("mhartington/formatter.nvim")
 
 	use("mattn/emmet-vim")
 
@@ -104,4 +104,10 @@ return require("packer").startup(function(use)
 	use("RRethy/vim-illuminate")
 	use("folke/todo-comments.nvim")
 	use("folke/persistence.nvim")
+	use("psliwka/vim-smoothie")
+
+	-- Terminal stuff
+	--
+	use({ "akinsho/toggleterm.nvim", tag = "*" })
+	use("folke/which-key.nvim")
 end)
