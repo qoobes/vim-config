@@ -6,7 +6,7 @@ vim.opt.autoindent = true
 
 vim.opt.guicursor = ""
 vim.opt.wrap = false
-vim.opt.swapfile = false
+vim.opt.swapfile = true
 vim.opt.nu = true
 
 vim.opt.termguicolors = true
@@ -25,3 +25,5 @@ vim.opt.colorcolumn = "0"
 vim.opt.scrolloff = 10
 
 vim.g.mapleader = " "
+
+vim.cmd("set fillchars+=vert:\\ ")
