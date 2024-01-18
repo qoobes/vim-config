@@ -12,17 +12,14 @@ return require("packer").startup(function(use)
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 
-	use({
-		"rose-pine/neovim",
-		as = "rose-pine",
-		config = function()
-			vim.cmd("colorscheme rose-pine")
-		end,
-	})
-
+	-- Colourschemes
+	use({ "rose-pine/neovim", as = "rose-pine" })
 	use("lunarvim/darkplus.nvim")
 	use("lunarvim/synthwave84.nvim")
 	use("folke/tokyonight.nvim")
+	use("Mofiqul/vscode.nvim")
+	use("marko-cerovac/material.nvim")
+	use("lunarvim/colorschemes")
 
 	-- use 'rebelot/kanagawa.nvim'
 
