@@ -6,6 +6,17 @@ return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
 
 	use({
+		"nvimdev/dashboard-nvim",
+		event = "VimEnter",
+		config = function()
+			require("dashboard").setup({
+				-- config
+			})
+		end,
+		requires = { "nvim-tree/nvim-web-devicons" },
+	})
+
+	use({
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.5",
 		-- or                            , branch = '0.1.x',
@@ -77,15 +88,20 @@ return require("packer").startup(function(use)
 	use("tpope/vim-surround")
 	use("wakatime/vim-wakatime")
 
-	use({
-		"stevearc/conform.nvim",
-		config = function()
-			require("conform").setup()
-		end,
-	})
+	-- use({
+	-- 	"stevearc/conform.nvim",
+	-- 	config = function()
+	-- 		require("conform").setup()
+	-- 	end,
+	-- })
+  --
+  use "mhartington/formatter.nvim"
 
 	use("mattn/emmet-vim")
 
 	use({ "akinsho/bufferline.nvim", tag = "*", requires = "nvim-tree/nvim-web-devicons" })
 	use("moll/vim-bbye")
+	use("RRethy/vim-illuminate")
+	use("folke/todo-comments.nvim")
+	use("folke/persistence.nvim")
 end)
