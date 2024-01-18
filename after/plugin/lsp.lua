@@ -38,6 +38,9 @@ require("mason").setup({})
 require("mason-lspconfig").setup({
 	ensure_installed = { "tsserver", "rust_analyzer" },
 	handlers = {
+		function(server_name) -- default handler (optional)
+			require("lspconfig")[server_name].setup({})
+		end,
 		lsp_zero.default_setup,
 		lua_ls = function()
 			local lua_opts = lsp_zero.nvim_lua_ls()
@@ -53,6 +56,12 @@ end, { buffer = 0, remap = false })
 local cmp = require("cmp")
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local lspkind = require("lspkind")
+local has_words_before = function()
+	local cursor = vim.api.nvim_win_get_cursor(0)
+	return (vim.api.nvim_buf_get_lines(0, cursor[1] - 1, cursor[1], true)[1] or "")
+		:sub(cursor[2], cursor[2])
+		:match("%s")
+end
 
 cmp.setup({
 	snippet = {
@@ -62,7 +71,7 @@ cmp.setup({
 	},
 	formatting = {
 		format = lspkind.cmp_format({
-			mode = "symbol", -- show only symbol annotations
+			mode = "symbol_text", -- show only symbol annotations
 			maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
 			-- can also be a function to dynamically calculate max width such as
 			-- maxwidth = function() return math.floor(0.45 * vim.o.columns) end,
@@ -79,6 +88,7 @@ cmp.setup({
 		{ name = "nvim_lua" },
 		{ name = "luasnip" },
 	},
+
 	mapping = cmp.mapping.preset.insert({
 		["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
 		["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
@@ -89,10 +99,10 @@ cmp.setup({
 				require("copilot.suggestion").accept()
 			elseif cmp.visible() then
 				cmp.select_next_item({ behavior = cmp.SelectBehavior.Insert })
-			elseif require("luasnip").expandable() then
-				require("luasnip").expand()
-			elseif has_words_before() then
-				cmp.complete()
+			-- elseif require("luasnip").expandable() then
+			-- 	require("luasnip").expand()
+			-- elseif has_words_before() then
+			-- 	cmp.complete()
 			else
 				fallback()
 			end
