@@ -1,9 +1,9 @@
 function ColorMyPencils(color)
-  	color = color or "rose-pine"
+	color = color or "vscode"
 
-  	vim.cmd.colorscheme(color)
-  	vim.api.nvim_set_hl(1, "Normal", { bg = "none" })
-  	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-  end
+	vim.cmd.colorscheme(color)
+	vim.api.nvim_set_hl(1, "Normal", { bg = "none" })
+	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+end
 
 ColorMyPencils()
