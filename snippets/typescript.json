@@ -1,16 +1,12 @@
 {
   "Print to console": {
     "prefix": "clog",
-    "body": [
-      "console.log($1)"
-    ],
+    "body": ["console.log($1)"],
     "description": "Log output to console"
   },
   "Error to console": {
     "prefix": "cer",
-    "body": [
-      "console.error($1)"
-    ],
+    "body": ["console.error($1)"],
     "description": "Log error to console"
-  },
+  }
 }
