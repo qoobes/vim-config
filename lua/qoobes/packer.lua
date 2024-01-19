@@ -110,4 +110,8 @@ return require("packer").startup(function(use)
 	--
 	use({ "akinsho/toggleterm.nvim", tag = "*" })
 	use("folke/which-key.nvim")
+
+	-- apm primeagen
+	use("theprimeagen/vim-apm")
+	use("folke/trouble.nvim")
 end)
