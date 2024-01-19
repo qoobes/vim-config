@@ -38,8 +38,8 @@ lsp_zero.on_attach(function(client, bufnr)
 		vim.lsp.buf.code_action()
 	end, getOpts("View code actions"))
 
-	vim.keymap.set("n", "<leader>gm", function()
-		vim.lsp.buf.references()
+	vim.keymap.set("n", "<leader>gr", function()
+		vim.lsp.buf.references({ includeDeclaration = false })
 	end, getOpts("View references"))
 
 	vim.keymap.set("n", "ge", function()
