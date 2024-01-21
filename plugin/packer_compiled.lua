@@ -74,6 +74,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["Comment.nvim"] = {
+    loaded = true,
+    path = "/Users/ahmed/.local/share/nvim/site/pack/packer/start/Comment.nvim",
+    url = "https://github.com/numToStr/Comment.nvim"
+  },
   LuaSnip = {
     loaded = true,
     path = "/Users/ahmed/.local/share/nvim/site/pack/packer/start/LuaSnip",
@@ -132,6 +137,11 @@ _G.packer_plugins = {
     path = "/Users/ahmed/.local/share/nvim/site/pack/packer/start/formatter.nvim",
     url = "https://github.com/mhartington/formatter.nvim"
   },
+  ["glance.nvim"] = {
+    loaded = true,
+    path = "/Users/ahmed/.local/share/nvim/site/pack/packer/start/glance.nvim",
+    url = "https://github.com/DNLHC/glance.nvim"
+  },
   harpoon = {
     loaded = true,
     path = "/Users/ahmed/.local/share/nvim/site/pack/packer/start/harpoon",
@@ -177,6 +187,11 @@ _G.packer_plugins = {
     path = "/Users/ahmed/.local/share/nvim/site/pack/packer/start/nui.nvim",
     url = "https://github.com/MunifTanjim/nui.nvim"
   },
+  ["null-ls.nvim"] = {
+    loaded = true,
+    path = "/Users/ahmed/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
+    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
+  },
   ["nvim-autopairs"] = {
     config = { "\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0" },
     loaded = true,
@@ -187,11 +202,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/ahmed/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
-  },
-  ["nvim-comment"] = {
-    loaded = true,
-    path = "/Users/ahmed/.local/share/nvim/site/pack/packer/start/nvim-comment",
-    url = "https://github.com/terrortylor/nvim-comment"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -212,6 +222,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/ahmed/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag",
     url = "https://github.com/windwp/nvim-ts-autotag"
+  },
+  ["nvim-ts-context-commentstring"] = {
+    loaded = true,
+    path = "/Users/ahmed/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring",
+    url = "https://github.com/JoosepAlviste/nvim-ts-context-commentstring"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
