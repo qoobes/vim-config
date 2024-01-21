@@ -13,9 +13,7 @@ lsp_zero.on_attach(function(client, bufnr)
     }
   end
 
-  vim.keymap.set("n", "gd", function()
-    vim.lsp.buf.definition()
-  end, getOpts("Go to definition"))
+  vim.keymap.set("n", "gd", "<CMD>Glance definitions<CR>", getOpts("Go to definition"))
 
   vim.keymap.set("n", "K", function()
     vim.lsp.buf.hover()
@@ -38,9 +36,7 @@ lsp_zero.on_attach(function(client, bufnr)
     vim.lsp.buf.code_action()
   end, getOpts("View code actions"))
 
-  vim.keymap.set("n", "<leader>gr", function()
-    vim.lsp.buf.references({ includeDeclaration = false })
-  end, getOpts("View references"))
+  vim.keymap.set("n", "<leader>gr", "<CMD>Glance references<CR>", getOpts("View references"))
 
   vim.keymap.set("n", "ge", function()
     vim.lsp.buf.rename()
@@ -55,9 +51,9 @@ require("mason-lspconfig").setup({
       require("lspconfig")[server_name].setup({})
     end,
     lsp_zero.default_setup,
-    -- lua_ls = function()
-    -- 	local lua_opts = lsp_zero.nvim_lua_ls()
-    -- 	require("lspconfig").lua_ls.setup(lua_opts)
-    -- end,
+    lua_ls = function()
+      local lua_opts = lsp_zero.nvim_lua_ls()
+      require("lspconfig").lua_ls.setup(lua_opts)
+    end,
   },
 })
