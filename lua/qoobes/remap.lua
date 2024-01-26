@@ -10,15 +10,15 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 -- Copy pasting remaps
 vim.keymap.set("x", "<leader>p", '"_dP')
 
-vim.keymap.set("n", "<leader>y", '"+y')
-vim.keymap.set("v", "<leader>y", '"+y')
-vim.keymap.set("x", "<leader>y", '"+y')
-vim.keymap.set("n", "<leader>Y", '"+Y')
+vim.keymap.set("n", "<leader>y", '"+y', opts)
+vim.keymap.set("v", "<leader>y", '"+y', opts)
+vim.keymap.set("x", "<leader>y", '"+y', opts)
+vim.keymap.set("n", "<leader>Y", '"+Y', opts)
 
-vim.keymap.set("n", "<leader>d", '"_d')
-vim.keymap.set("v", "<leader>d", '"_d')
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-vim.keymap.set("v", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set("n", "<leader>d", '"_d', opts)
+vim.keymap.set("v", "<leader>d", '"_d', opts)
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
+vim.keymap.set("v", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
 
 -- WIndow navigation
 vim.keymap.set("n", "<C-h>", "<C-w>h")
@@ -38,10 +38,10 @@ keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<C-w>", ":Bdelete<CR>", opts)
 
-
 --- Mpa ctrl c to esc
 keymap("i", "<C-c>", "<Esc>", opts)
 
+keymap("n", "<leader>lsp", ":LspRestart<CR>", opts)
 
 -- -- Better terminal navigation
 -- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
