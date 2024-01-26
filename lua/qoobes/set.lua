@@ -26,4 +26,5 @@ vim.opt.scrolloff = 10
 
 vim.g.mapleader = " "
 
+vim.cmd("set spr")
 vim.cmd("set fillchars+=vert:\\ ")
