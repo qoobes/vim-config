@@ -117,8 +117,6 @@ return require("packer").startup(function(use)
 
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 
-	-- Vscode style quick view window
-	use("DNLHC/glance.nvim")
 	use({
 		"qoobes/CopilotChat.nvim",
 		branch = "fix/spinner",
