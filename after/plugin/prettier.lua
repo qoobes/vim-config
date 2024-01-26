@@ -147,10 +147,12 @@ lspconfig.tsserver.setup({
   },
 })
 
-local augroup = vim.api.nvim_create_augroup
-local autocmd = vim.api.nvim_create_autocmd
-augroup("imports", { clear = true })
-autocmd("BufWritePre", {
-  group = "imports",
-  command = ":OrganizeImports",
-})
+vim.keymap.set("n", "<leader>or", ":OrganizeImports<CR>", { noremap = true, silent = true })
+
+-- local augroup = vim.api.nvim_create_augroup
+-- local autocmd = vim.api.nvim_create_autocmd
+-- augroup("imports", { clear = true })
+-- autocmd("BufWritePre", {
+--   group = "imports",
+--   command = ":OrganizeImports",
+-- })
