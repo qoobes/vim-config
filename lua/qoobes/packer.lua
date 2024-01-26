@@ -114,8 +114,8 @@ return require("packer").startup(function(use)
   -- Vscode style quick view window
   use("DNLHC/glance.nvim")
 
-  use("numToStr/FTerm.nvim")
   use("fladson/vim-kitty")
+  use("numToStr/FTerm.nvim")
 
   use({
     "qoobes/CopilotChat.nvim",
