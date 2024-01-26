@@ -15,25 +15,26 @@ vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
 -- local fb_actions = require "telescope".extensions.file_browser.actions
 
 require("telescope").setup({
-	initial_mode = "normal",
-	extensions = {
-		-- file_browser = {
-		-- 	enabled = false,
-		-- initial_mode = "normal",
-		-- theme = "ivy",
-		-- disables netrw and use telescope-file-browser in its place
-		-- hijack_netrw = false,
-		-- mappings = {
-		--   ["i"] = {
-		--     -- your custom insert mode mappings
-		--   },
-		--   ["n"] = {
-		--     ["<leader>ff"] = fb_actions.toggle_browser,
-		--     ["<leader>nn"] = fb_actions.create
-		--   },
-		-- },
-		-- },
-	},
+  initial_mode = "normal",
+  extensions = {
+    -- file_browser = {
+    -- 	enabled = false,
+    -- initial_mode = "normal",
+    -- theme = "ivy",
+    -- disables netrw and use telescope-file-browser in its place
+    -- hijack_netrw = false,
+    -- mappings = {
+    --   ["i"] = {
+    --     -- your custom insert mode mappings
+    --   },
+    --   ["n"] = {
+    --     ["<leader>ff"] = fb_actions.toggle_browser,
+    --     ["<leader>nn"] = fb_actions.create
+    --   },
+    -- },
+    -- },
+  },
 })
 
 require("telescope").load_extension("file_browser")
+require("telescope").load_extension("noice")
