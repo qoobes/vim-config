@@ -16,11 +16,7 @@ cmp.setup({
     debounce = 10,
   },
   formatting = {
-    fields = {
-      cmp.ItemField.Kind,
-      cmp.ItemField.Abbr,
-      cmp.ItemField.Menu,
-    },
+    fields = { cmp.ItemField.Kind, cmp.ItemField.Abbr, cmp.ItemField.Menu },
 
     format = lspkind.cmp_format({
       before = function(entry, vim_item)
