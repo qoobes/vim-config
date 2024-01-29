@@ -41,7 +41,7 @@ keymap("n", "<CS-Right>", ":vertical resize -2<CR>", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
-keymap("n", "<leader>bc", ":Bdelete<CR>", opts)
+keymap("n", "<leader>w", ":Bdelete<CR>", opts)
 
 --- Mpa ctrl c to esc
 keymap("i", "<C-c>", "<Esc>", opts)
