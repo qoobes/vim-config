@@ -53,5 +53,25 @@
       "}"
     ],
     "description": "Craetes a react functional component."
+  },
+  "Shad dialog": {
+    "prefix": "dialog",
+    "body": [
+      "<Dialog>",
+      "<DialogContent>",
+      "<DialogHeader>",
+      "<DialogTitle></DialogTitle>",
+      "<DialogDescription></DialogDescription>",
+      "</DialogHeader>",
+      "<DialogFooter></DialogFooter>",
+      "</DialogContent>",
+      "</Dialog>"
+    ]
+  },
+  "Shad dialog imports": {
+    "prefix": "dialogimp",
+    "body": [
+      "import { Dialog, DialogTitle, DialogFooter, DialogHeader, DialogContent, DialogDescription, } from \"@/components/ui/dialog\";"
+    ]
   }
 }
