@@ -10,6 +10,11 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 -- Copy pasting remaps
 vim.keymap.set("x", "<leader>p", '"_dP')
 
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
+
 vim.keymap.set("n", "<leader>y", '"+y', opts)
 vim.keymap.set("v", "<leader>y", '"+y', opts)
 vim.keymap.set("x", "<leader>y", '"+y', opts)
@@ -36,12 +41,16 @@ keymap("n", "<CS-Right>", ":vertical resize -2<CR>", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
-keymap("n", "<C-w>", ":Bdelete<CR>", opts)
+keymap("n", "<leader>bc", ":Bdelete<CR>", opts)
 
 --- Mpa ctrl c to esc
 keymap("i", "<C-c>", "<Esc>", opts)
 
 keymap("n", "<leader>lsp", ":LspRestart<CR>", opts)
+
+keymap("n", "<leader>gps", ":G! push ", {
+  noremap = true,
+})
 
 -- -- Better terminal navigation
 -- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
