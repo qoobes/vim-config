@@ -116,8 +116,5 @@ return require("packer").startup(function(use)
   use("fladson/vim-kitty")
   use("numToStr/FTerm.nvim")
 
-  use({
-    "qoobes/CopilotChat.nvim",
-    branch = "fix/spinner",
-  })
+  use("jellydn/CopilotChat.nvim")
 end)

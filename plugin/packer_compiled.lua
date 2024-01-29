@@ -82,7 +82,7 @@ _G.packer_plugins = {
   ["CopilotChat.nvim"] = {
     loaded = true,
     path = "/Users/ahmed/.local/share/nvim/site/pack/packer/start/CopilotChat.nvim",
-    url = "https://github.com/qoobes/CopilotChat.nvim"
+    url = "https://github.com/jellydn/CopilotChat.nvim"
   },
   ["FTerm.nvim"] = {
     loaded = true,
