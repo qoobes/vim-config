@@ -99,7 +99,6 @@ return require("packer").startup(function(use)
   use("moll/vim-bbye")
   use("RRethy/vim-illuminate")
   use("folke/todo-comments.nvim")
-  use("psliwka/vim-smoothie")
 
   use("folke/which-key.nvim")
 
