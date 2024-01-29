@@ -38,3 +38,8 @@ require("telescope").setup({
 
 require("telescope").load_extension("file_browser")
 require("telescope").load_extension("noice")
+
+vim.keymap.set("n", "<leader>cc", require("telescope").extensions.conventional_commits.conventional_commits, {
+  noremap = true,
+  silent = true,
+})
