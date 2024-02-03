@@ -30,8 +30,9 @@ lsp_zero.on_attach(function(client, bufnr)
   vim.keymap.set("n", "gr", function()
     vim.diagnostic.goto_next()
   end, getOpts("Go to next diagnostic"))
-  -- vim.keymap.set("n", "bgr", function() vim.diagnostic.goto_prev() end, opts) -- Disabled cause it interferes with vim
-  --
+  vim.keymap.set("n", "<leader>bgr", function()
+    vim.diagnostic.goto_prev()
+  end, opts) -- Disabled cause it interferes with vim
   vim.keymap.set("n", "ga", function()
     vim.lsp.buf.code_action()
   end, getOpts("View code actions"))
