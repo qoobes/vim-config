@@ -1,3 +1,4 @@
+vim.diagnostic.config({ virtual_text = false }) -- False by default
 vim.api.nvim_create_user_command("DiagnosticsToggleVirtualText", function()
   local current_value = vim.diagnostic.config().virtual_text
   if current_value then
