@@ -10,7 +10,7 @@ end
 
 resession.setup({
   autosave = {
-    enabled = true,
+    enabled = false,
     interval = 60,
     notify = true,
   },
