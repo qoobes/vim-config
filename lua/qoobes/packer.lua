@@ -44,7 +44,7 @@ return require("packer").startup(function(use)
       --- Uncomment these if you want to manage LSP servers from neovim
       { "williamboman/mason.nvim" },
       { "williamboman/mason-lspconfig.nvim" },
-      { "jose-elias-alvarez/null-ls.nvim" },
+      { "nvimtools/none-ls.nvim" },
       -- LSP Support
       { "neovim/nvim-lspconfig" },
       -- Autocompletion
