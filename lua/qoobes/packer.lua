@@ -122,5 +122,7 @@ return require("packer").startup(function(use)
 
   use({ "edluffy/hologram.nvim" })
 
-  use("jellydn/CopilotChat.nvim")
+  use("brooth/far.vim")
+  use("junegunn/rainbow_parentheses.vim")
+  use("lewis6991/gitsigns.nvim")
 end)
