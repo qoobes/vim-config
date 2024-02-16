@@ -6,7 +6,8 @@ vim.opt.autoindent = true
 
 vim.opt.guicursor = ""
 vim.opt.wrap = false
-vim.opt.swapfile = true
+vim.opt.swapfile = false
+vim.opt.backup = false
 vim.opt.nu = true
 
 vim.opt.termguicolors = true
@@ -27,4 +28,4 @@ vim.opt.scrolloff = 10
 vim.g.mapleader = " "
 
 vim.cmd("set spr")
-vim.cmd("set fillchars+=vert:\\ ")
+-- vim.cmd("set fillchars+=vert:\\ ")
