@@ -114,7 +114,13 @@ return require("packer").startup(function(use)
   use("DNLHC/glance.nvim")
 
   use("fladson/vim-kitty")
-  use("numToStr/FTerm.nvim")
+  -- use("numToStr/FTerm.nvim")
+  --
+  use({ "akinsho/toggleterm.nvim", tag = "*" })
+
+  use("CopilotC-Nvim/CopilotChat.nvim")
+
+  use({ "edluffy/hologram.nvim" })
 
   use("jellydn/CopilotChat.nvim")
 end)
