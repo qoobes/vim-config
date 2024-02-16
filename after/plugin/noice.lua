@@ -18,8 +18,9 @@ require("noice").setup({
   views = {
     cmdline_popup = {
       border = {
-        rounded = true,
-        padding = { 0, 1 },
+        rounded = false,
+        padding = { 0, 0 },
+        enable = false,
       },
       filter_options = {},
       win_options = {
