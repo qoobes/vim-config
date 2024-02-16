@@ -1,6 +1,7 @@
 require("CopilotChat").setup({
   mode = "split",
   debug = false,
+  show_help = "yes",
   prompts = {
     Explain = "Explain how it works",
     Tests = "Briefly explain how the selected code works, then generate unit tests.",
@@ -39,3 +40,14 @@ set_copilot_keymap("t", "CopilotChatTests", "Copilot Tests")
 set_copilot_keymap("r", "CopilotChatReview", "Copilot Review")
 set_copilot_keymap("f", "CopilotChatRefactor", "Copilot Refactor")
 set_copilot_keymap("s", "CopilotChatStop", "Copilot Stop")
+vim.keymap.set("n", "<leader>cci", function()
+  local input = vim.fn.input("Ask Copilot: ")
+  if input ~= "" then
+    vim.cmd("CopilotChat " .. input)
+  end
+end, {
+  noremap = true,
+  silent = true,
+  desc = "Ask Copilot",
+}
+)
