@@ -1,4 +1,7 @@
 local opts = { noremap = true, silent = true }
+local getOpts = function(custom_opts)
+  return vim.tbl_extend("force", opts, custom_opts or {})
+end
 
 -- local term_opts = { silent = true }
 
@@ -32,10 +35,10 @@ vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
 
 -- Window resizing
-keymap("n", "<CS-Up>", ":resize -2<CR>", opts)
-keymap("n", "<CS-Down>", ":resize +2<CR>", opts)
-keymap("n", "<CS-Left>", ":vertical resize +2<CR>", opts)
-keymap("n", "<CS-Right>", ":vertical resize -2<CR>", opts)
+keymap("n", "<M-Up>", ":resize -2<CR>", opts)
+keymap("n", "<M-Down>", ":resize +2<CR>", opts)
+keymap("n", "<M-Left>", ":vertical resize +2<cr>", opts)
+keymap("n", "<M-Right>", ":vertical resize -2<cr>", opts)
 
 -- buffers
 -- Navigate buffers
@@ -51,6 +54,28 @@ keymap("n", "<leader>lsp", ":LspRestart<CR>", opts)
 keymap("n", "<leader>gps", ":G! push ", {
   noremap = true,
 })
+
+keymap("n", "<leader>gpl", ":G! pull<cr>", {
+  noremap = true,
+})
+
+-- Splits
+keymap(
+  "n",
+  "<leader>sv",
+  ":vsplit<CR>",
+  getOpts({
+    desc = "Split vertical",
+  })
+)
+keymap(
+  "n",
+  "<leader>sh",
+  ":split<CR>",
+  getOpts({
+    desc = "Split horizontal",
+  })
+)
 
 -- -- Better terminal navigation
 -- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
