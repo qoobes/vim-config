@@ -17,9 +17,9 @@ end
 
 local function filterReactDTS(value)
   if value.uri then
-    return string.match(value.uri, "%.d.ts") == nil and string.match(value.uri, "node_modules") == nil
+    return string.match(value.uri, "%.d.ts") == nil
   elseif value.targetUri then
-    return string.match(value.targetUri, "%.d.ts") == nil and string.match(value.targetUri, "node_modules") == nil
+    return string.match(value.targetUri, "%.d.ts") == nil
   end
 
   return true
@@ -33,7 +33,7 @@ glance.setup({
       if #newResults == 1 then
         jump(newResults[1]) -- argument is optional
       else
-        open(newResults) -- argument is optional
+        open(newResults)    -- argument is optional
       end
     end,
   },
