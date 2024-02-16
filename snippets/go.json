@@ -1,0 +1,16 @@
+{
+  "Print to console": {
+    "prefix": "clog",
+    "body": [
+      "fmt.Println($1)"
+    ],
+    "description": "Log output to console"
+  },
+  "Print to console formatted": {
+    "prefix": "clogf",
+    "body": [
+      "fmt.Printf($1)"
+    ],
+    "description": "Log output to console"
+  }
+}
