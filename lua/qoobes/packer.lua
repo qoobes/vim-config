@@ -125,4 +125,7 @@ return require("packer").startup(function(use)
   use("brooth/far.vim")
   use("junegunn/rainbow_parentheses.vim")
   use("lewis6991/gitsigns.nvim")
+
+  use("mbbill/undotree")
+  use("folke/zen-mode.nvim")
 end)

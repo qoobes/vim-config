@@ -321,6 +321,11 @@ _G.packer_plugins = {
     path = "/Users/ahmed/.local/share/nvim/site/pack/packer/start/trouble.nvim",
     url = "https://github.com/folke/trouble.nvim"
   },
+  undotree = {
+    loaded = true,
+    path = "/Users/ahmed/.local/share/nvim/site/pack/packer/start/undotree",
+    url = "https://github.com/mbbill/undotree"
+  },
   ["vim-apm"] = {
     loaded = true,
     path = "/Users/ahmed/.local/share/nvim/site/pack/packer/start/vim-apm",
@@ -365,6 +370,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/ahmed/.local/share/nvim/site/pack/packer/start/which-key.nvim",
     url = "https://github.com/folke/which-key.nvim"
+  },
+  ["zen-mode.nvim"] = {
+    loaded = true,
+    path = "/Users/ahmed/.local/share/nvim/site/pack/packer/start/zen-mode.nvim",
+    url = "https://github.com/folke/zen-mode.nvim"
   }
 }
 
