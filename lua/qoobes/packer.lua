@@ -128,4 +128,5 @@ return require("packer").startup(function(use)
 
   use("mbbill/undotree")
   use("folke/zen-mode.nvim")
+  use("aserowy/tmux.nvim")
 end)
