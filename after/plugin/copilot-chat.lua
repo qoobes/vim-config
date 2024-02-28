@@ -14,21 +14,21 @@ require("CopilotChat").setup({
 local function set_copilot_keymap(key, command, description)
   vim.keymap.set(
     "n",
-    "<leader>c" .. key,
+    "<leader>cc" .. key,
     "<cmd>" .. command .. "<cr>",
     { noremap = true, silent = true, desc = description }
   )
 
   vim.keymap.set(
     "v",
-    "<leader>c" .. key,
+    "<leader>cc" .. key,
     "y<cmd>" .. command .. "<cr>",
     { noremap = true, silent = true, desc = "Vis mode" .. description }
   )
 
   vim.keymap.set(
     "v",
-    "<leader>c" .. key,
+    "<leader>cc" .. key,
     "y<cmd>" .. command .. "<cr>",
     { noremap = true, silent = true, desc = "XVis mode" .. description }
   )
@@ -40,6 +40,13 @@ set_copilot_keymap("t", "CopilotChatTests", "Copilot Tests")
 set_copilot_keymap("r", "CopilotChatReview", "Copilot Review")
 set_copilot_keymap("f", "CopilotChatRefactor", "Copilot Refactor")
 set_copilot_keymap("s", "CopilotChatStop", "Copilot Stop")
+
+vim.keymap.set("n", "<leader>ccb", ":CopilotChatBuffer ", {
+  desc = "Copilot Chat with Buffer",
+  noremap = true,
+  silent = false,
+})
+
 vim.keymap.set("n", "<leader>cci", function()
   local input = vim.fn.input("Ask Copilot: ")
   if input ~= "" then
@@ -49,5 +56,4 @@ end, {
   noremap = true,
   silent = true,
   desc = "Ask Copilot",
-}
-)
+})
