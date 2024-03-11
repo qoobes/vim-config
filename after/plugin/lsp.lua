@@ -45,8 +45,11 @@ lsp_zero.on_attach(function(client, bufnr)
 end)
 
 require("mason").setup({})
-require("mason-lspconfig").setup({
-  ensure_installed = { "tsserver", "rust_analyzer" },
+
+local masonLspConfig = require("mason-lspconfig")
+
+masonLspConfig.setup({
+  ensure_installed = { "tsserver", "rust_analyzer", "tailwindcss" },
   handlers = {
     function(server_name) -- default handler (optional)
       require("lspconfig")[server_name].setup({})
@@ -57,4 +60,34 @@ require("mason-lspconfig").setup({
       require("lspconfig").lua_ls.setup(lua_opts)
     end,
   },
+})
+
+masonLspConfig.setup_handlers({
+  function(server_name)
+    local tailwindSettings = {
+      classAttributes = {
+        "class",
+        "className",
+        "style",
+        "ngClass",
+      },
+      experimental = {
+        classRegex = {
+          "tw`([^`]*)",
+          { "tw.style\\(([^)]*)\\)", "'([^']*)'" },
+        },
+      },
+    }
+
+    if server_name == "tailwindcss" then
+      require("lspconfig")[server_name].setup({
+        on_attach = lsp_zero.on_attach,
+        capabilities = lsp_zero.capabilities,
+        settings = {
+          tailwindCSS = tailwindSettings,
+        },
+      })
+      return
+    end
+  end,
 })
