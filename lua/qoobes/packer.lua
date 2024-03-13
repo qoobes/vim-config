@@ -96,7 +96,7 @@ return require("packer").startup(function(use)
   use("mattn/emmet-vim")
 
   use({ "akinsho/bufferline.nvim", tag = "*", requires = "nvim-tree/nvim-web-devicons" })
-  use("moll/vim-bbye")
+  use("moll/vim-bbye") -- For deleting buffers
   use("RRethy/vim-illuminate")
   use("folke/todo-comments.nvim")
 
