@@ -12,6 +12,8 @@ return require("packer").startup(function(use)
     end,
   })
 
+  use("christoomey/vim-tmux-navigator")
+
   use({
     "nvim-telescope/telescope.nvim",
     tag = "0.1.5",
@@ -22,12 +24,12 @@ return require("packer").startup(function(use)
   -- Colourschemes
   use({ "rose-pine/neovim", as = "rose-pine" })
   use({ "catppuccin/nvim", as = "catppuccin" })
-  use("lunarvim/darkplus.nvim")
-  use("lunarvim/synthwave84.nvim")
-  use("folke/tokyonight.nvim")
-  use("Mofiqul/vscode.nvim")
-  use("marko-cerovac/material.nvim")
-  use("lunarvim/colorschemes")
+  -- use("lunarvim/darkplus.nvim")
+  -- use("lunarvim/synthwave84.nvim")
+  -- use("folke/tokyonight.nvim")
+  -- use("Mofiqul/vscode.nvim")
+  -- use("marko-cerovac/material.nvim")
+  -- use("lunarvim/colorschemes")
 
   -- use 'rebelot/kanagawa.nvim'
 
@@ -37,6 +39,8 @@ return require("packer").startup(function(use)
 
   use("tpope/vim-fugitive")
 
+  use("nvimtools/none-ls-extras.nvim")
+
   use({
     "VonHeikemen/lsp-zero.nvim",
     branch = "v3.x",
@@ -44,7 +48,12 @@ return require("packer").startup(function(use)
       --- Uncomment these if you want to manage LSP servers from neovim
       { "williamboman/mason.nvim" },
       { "williamboman/mason-lspconfig.nvim" },
-      { "nvimtools/none-ls.nvim" },
+      {
+        "nvimtools/none-ls.nvim",
+        requires = {
+          "nvimtools/none-ls-extras.nvim",
+        },
+      },
       -- LSP Support
       { "neovim/nvim-lspconfig" },
       -- Autocompletion
@@ -61,11 +70,6 @@ return require("packer").startup(function(use)
   use("onsails/lspkind.nvim")
   use("nvim-lualine/lualine.nvim")
   use("AndreM222/copilot-lualine")
-
-  use({
-    "nvim-telescope/telescope-file-browser.nvim",
-    requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
-  })
 
   use("nvim-tree/nvim-web-devicons")
   use("nvim-tree/nvim-tree.lua")
@@ -118,7 +122,10 @@ return require("packer").startup(function(use)
   --
   use({ "akinsho/toggleterm.nvim", tag = "*" })
 
-  use("CopilotC-Nvim/CopilotChat.nvim")
+  use({
+    "CopilotC-Nvim/CopilotChat.nvim",
+    branch = "canary",
+  })
 
   use({ "edluffy/hologram.nvim" })
 
@@ -128,5 +135,5 @@ return require("packer").startup(function(use)
 
   use("mbbill/undotree")
   use("folke/zen-mode.nvim")
-  use("aserowy/tmux.nvim")
+  -- use("aserowy/tmux.nvim")
 end)

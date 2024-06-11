@@ -5,6 +5,8 @@ local null_ls = require("null-ls")
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 null_ls.setup({
+  debug = false,
+
   on_attach = function(client, bufnr)
     if client.supports_method("textDocument/formatting") then
       vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
@@ -12,7 +14,7 @@ null_ls.setup({
         group = augroup,
         buffer = bufnr,
         callback = function()
-          vim.lsp.buf.format({ async = false }) -- TODO: Switch to sync if it becomes an issue
+          vim.lsp.buf.format({ async = false }) -- NOTE: Switch to sync if it becomes an issue
         end,
       })
     end
@@ -25,8 +27,8 @@ null_ls.setup({
       },
     }),
     null_ls.builtins.formatting.stylua,
-    null_ls.builtins.diagnostics.eslint_d,
-    null_ls.builtins.code_actions.eslint_d,
+    require("none-ls.diagnostics.eslint_d"),
+    require("none-ls.code_actions.eslint_d"),
     null_ls.builtins.code_actions.gitsigns,
     null_ls.builtins.formatting.prismaFmt,
     null_ls.builtins.formatting.remark,
@@ -35,8 +37,8 @@ null_ls.setup({
     null_ls.builtins.code_actions.refactoring,
     null_ls.builtins.formatting.gofmt,
     null_ls.builtins.formatting.goimports,
-    null_ls.builtins.code_actions.shellcheck,
-    null_ls.builtins.diagnostics.shellcheck,
+    -- require("none-ls.diagnostics.shellcheck"),
+    -- require("none-ls.code_actions.shellcheck"),
     null_ls.builtins.formatting.shfmt,
     null_ls.builtins.formatting.shellharden,
     null_ls.builtins.formatting.black.with({ extra_args = { "--fast" } }),

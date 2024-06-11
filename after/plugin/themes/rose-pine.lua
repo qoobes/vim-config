@@ -1,0 +1,19 @@
+-- require("rose-pine").setup({
+--   variant = "main",
+--   dim_inactive_windows = false,
+--   extend_background_behind_borders = false,
+--
+--   enable = {
+--     terminal = true,
+--     legacy_highlights = true, -- Improve compatibility for previous versions of Neovim
+--     migrations = true,      -- Handle deprecated options automatically
+--   },
+--   styles = {
+--     bold = true,
+--     italic = true,
+--     transparency = true,
+--   },
+--   disable_background = true,
+--   disable_float_background = true,
+--   transparency = true,
+-- })

@@ -1,6 +1,6 @@
 local opts = { noremap = true, silent = true }
 local getOpts = function(custom_opts)
-  return vim.tbl_extend("force", opts, custom_opts or {})
+	return vim.tbl_extend("force", opts, custom_opts or {})
 end
 
 -- local term_opts = { silent = true }
@@ -52,31 +52,39 @@ keymap("i", "<C-c>", "<Esc>", opts)
 keymap("n", "<leader>lsp", ":LspRestart<CR>", opts)
 
 keymap("n", "<leader>gps", ":G! push ", {
-  noremap = true,
+	noremap = true,
 })
 
 keymap("n", "<leader>gpl", ":G! pull<cr>", {
-  noremap = true,
+	noremap = true,
 })
 
 -- Splits
 keymap(
-  "n",
-  "<leader>sv",
-  ":vsplit<CR>",
-  getOpts({
-    desc = "Split vertical",
-  })
+	"n",
+	"<leader>sv",
+	":vsplit<CR>",
+	getOpts({
+		desc = "Split vertical",
+	})
 )
 keymap(
-  "n",
-  "<leader>sh",
-  ":split<CR>",
-  getOpts({
-    desc = "Split horizontal",
-  })
+	"n",
+	"<leader>sh",
+	":split<CR>",
+	getOpts({
+		desc = "Split horizontal",
+	})
 )
 
+-- quickfix stuf
+
+keymap("n", "<leader>qo", "<cmd>copen<CR>", getOpts({ desc = "Open quickfix" }))
+keymap("n", "<leader>qc", "<cmd>cclose<CR>", getOpts({ desc = "Close quickfix" }))
+keymap("n", "<leader>k", "<cmd>cprev<CR>zz", getOpts({ desc = "Prev quickfix" }))
+keymap("n", "<leader>j", "<cmd>cnext<CR>zz", getOpts({ desc = "Next quickfix" }))
+
+keymap("n", "G", "Gzz", getOpts({ desc = "Go to end of file" }))
 -- -- Better terminal navigation
 -- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
 -- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)

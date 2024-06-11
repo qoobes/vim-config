@@ -16,6 +16,19 @@ vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
 
 require("telescope").setup({
   initial_mode = "normal",
+  pickers = {
+    live_grep = {
+      file_ignore_patterns = { "node_modules", ".git/", ".venv" },
+      additional_args = function(_)
+        return { "--hidden" }
+      end,
+    },
+    find_files = {
+      file_ignore_patterns = { "node_modules", ".git/", ".venv" },
+      hidden = true,
+    },
+  },
+
   extensions = {
     -- file_browser = {
     -- 	enabled = false,
@@ -36,5 +49,4 @@ require("telescope").setup({
   },
 })
 
-require("telescope").load_extension("file_browser")
 require("telescope").load_extension("noice")
