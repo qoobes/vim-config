@@ -62,17 +62,28 @@ cmp.setup({
     ["<CR>"] = cmp.mapping.confirm({ select = true }),
     ["<C-Space>"] = cmp.mapping.complete(),
     ["<Tab>"] = cmp.mapping(function(fallback)
-      if require("copilot.suggestion").is_visible() then
-        require("copilot.suggestion").accept()
+      local suggestion = require("supermaven-nvim.completion_preview")
+
+      if suggestion.has_suggestion() then
+        suggestion.on_accept_suggestion()
       elseif cmp.visible() then
         cmp.select_next_item({ behavior = cmp.SelectBehavior.Insert })
-        -- elseif require("luasnip").expandable() then
-        -- 	require("luasnip").expand()
-        -- elseif has_words_before() then
-        -- 	cmp.complete()
       else
         fallback()
       end
+
+      -- old code
+      -- if require("copilot.suggestion").is_visible() then
+      --   require("copilot.suggestion").accept()
+      -- elseif cmp.visible() then
+      --   cmp.select_next_item({ behavior = cmp.SelectBehavior.Insert })
+      --   -- elseif require("luasnip").expandable() then
+      --   -- 	require("luasnip").expand()
+      --   -- elseif has_words_before() then
+      --   -- 	cmp.complete()
+      -- else
+      --   fallback()
+      -- end
     end, {
       "i",
       "s",

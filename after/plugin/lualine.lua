@@ -1,11 +1,11 @@
 require("lualine").setup({
   options = {
-    theme = "catppuccin",
+    theme = "rose-pine-main",
     -- ... the rest of your lualine config
   },
-  sections = {
-    lualine_x = {
-      "copilot",
-    },
-  },
+  -- sections = {
+  --   lualine_x = {
+  --     "copilot",
+  --   },
+  -- },
 })

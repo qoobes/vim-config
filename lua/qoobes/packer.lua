@@ -26,7 +26,7 @@ return require("packer").startup(function(use)
   use({ "catppuccin/nvim", as = "catppuccin" })
   -- use("lunarvim/darkplus.nvim")
   -- use("lunarvim/synthwave84.nvim")
-  -- use("folke/tokyonight.nvim")
+  use("folke/tokyonight.nvim")
   -- use("Mofiqul/vscode.nvim")
   -- use("marko-cerovac/material.nvim")
   -- use("lunarvim/colorschemes")
@@ -65,11 +65,11 @@ return require("packer").startup(function(use)
 
   use({ "saadparwaiz1/cmp_luasnip" })
 
-  use({ "zbirenbaum/copilot.lua" })
+  -- use({ "zbirenbaum/copilot.lua" })
 
   use("onsails/lspkind.nvim")
   use("nvim-lualine/lualine.nvim")
-  use("AndreM222/copilot-lualine")
+  -- use("AndreM222/copilot-lualine")
 
   use("nvim-tree/nvim-web-devicons")
   use("nvim-tree/nvim-tree.lua")
@@ -122,10 +122,10 @@ return require("packer").startup(function(use)
   --
   use({ "akinsho/toggleterm.nvim", tag = "*" })
 
-  use({
-    "CopilotC-Nvim/CopilotChat.nvim",
-    branch = "canary",
-  })
+  -- use({
+  --   "CopilotC-Nvim/CopilotChat.nvim",
+  --   branch = "canary",
+  -- })
 
   use({ "edluffy/hologram.nvim" })
 
@@ -136,4 +136,30 @@ return require("packer").startup(function(use)
   use("mbbill/undotree")
   use("folke/zen-mode.nvim")
   -- use("aserowy/tmux.nvim")
+
+  use("backdround/global-note.nvim")
+
+  use({
+    "supermaven-inc/supermaven-nvim",
+    config = function()
+      require("supermaven-nvim").setup({})
+    end,
+  })
+  use({
+    "ThePrimeagen/refactoring.nvim",
+    requires = {
+      { "nvim-lua/plenary.nvim" },
+      { "nvim-treesitter/nvim-treesitter" },
+    },
+  })
+
+  use({ "ellisonleao/gruvbox.nvim" })
+
+  -- Search and replace stuff
+  --
+  use("nvim-pack/nvim-spectre")
+  use("iamyoki/buffer-reopen.nvim")
+
+  -- ai stuff
+  use("frankroeder/parrot.nvim")
 end)

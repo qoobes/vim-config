@@ -1,12 +1,4 @@
 require("nvim-treesitter.configs").setup({
-  autotag = {
-    enable = true,
-    enable_rename = true,
-    enable_close = true,
-    enable_close_on_slash = true,
-    filetypes = { "html", "xml", "javascript", "javascriptreact", "typescriptreact", "svelte", "vue", "tsx" },
-    update_in_insert = true,
-  },
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
   ensure_installed = {
     "vimdoc",
@@ -49,5 +41,3 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
   },
   update_in_insert = true,
 })
-
-require("nvim-ts-autotag").setup()

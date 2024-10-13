@@ -77,6 +77,8 @@ keymap(
 	})
 )
 
+keymap("n", "<leader>z", "<C-w>|", getOpts({ desc = "Maximize split" }))
+
 -- quickfix stuf
 
 keymap("n", "<leader>qo", "<cmd>copen<CR>", getOpts({ desc = "Open quickfix" }))

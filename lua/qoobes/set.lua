@@ -31,4 +31,7 @@ vim.g.mapleader = " "
 
 vim.cmd("set spr")
 vim.cmd("set hidden")
+
+vim.cmd("let g:fugitive_git_executable = 'git -c core.hooksPath=/dev/null'")
+
 -- vim.cmd("set fillchars+=vert:\\ ")

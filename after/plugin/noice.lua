@@ -42,7 +42,7 @@ require("noice").setup({
   },
 })
 
-vim.keymap.set("n", "<leader>nt", "<cmd>Noice telescope<cr>", {
+vim.keymap.set("n", "<leader>msg", "<cmd>Noice telescope<cr>", {
   noremap = true,
   silent = true,
 })
