@@ -1,33 +1,32 @@
 local resession = require("resession")
 
 local function opts(desc)
-  return {
-    desc = desc,
-    silent = true,
-    noremap = true,
-  }
+	return {
+		desc = desc,
+		silent = true,
+		noremap = true,
+	}
 end
 
 resession.setup({
-  autosave = {
-    enabled = false,
-    interval = 60,
-    notify = true,
-  },
+	autosave = {
+		enabled = false,
+		interval = 60,
+		notify = true,
+	},
 })
 
 vim.api.nvim_create_autocmd("VimEnter", {
-  callback = function()
-    if vim.fn.argc(-1) == 0 then
-      print("cwd", vim.fn.getcwd())
-      resession.load(vim.fn.getcwd(), { dir = "dirsession", silence_errors = true })
-    end
-  end,
+	callback = function()
+		if vim.fn.argc(-1) == 0 then
+			resession.load(vim.fn.getcwd(), { dir = "dirsession", silence_errors = true })
+		end
+	end,
 })
 vim.api.nvim_create_autocmd("VimLeavePre", {
-  callback = function()
-    resession.save(vim.fn.getcwd(), { dir = "dirsession", notify = false })
-  end,
+	callback = function()
+		resession.save(vim.fn.getcwd(), { dir = "dirsession", notify = false })
+	end,
 })
 
 --

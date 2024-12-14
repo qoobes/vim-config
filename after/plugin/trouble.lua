@@ -1,14 +1,14 @@
 require("trouble").setup()
 
-local trouble = require("trouble.providers.telescope")
+local trouble2 = require("trouble.sources.telescope")
 
 local telescope = require("telescope")
 
 telescope.setup({
 	defaults = {
 		mappings = {
-			i = { ["†"] = trouble.open_with_trouble },
-			n = { ["†"] = trouble.open_with_trouble },
+			i = { ["†"] = trouble2.open },
+			n = { ["†"] = trouble2.open },
 		},
 	},
 })

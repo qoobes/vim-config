@@ -34,4 +34,4 @@ vim.cmd("set hidden")
 
 vim.cmd("let g:fugitive_git_executable = 'git -c core.hooksPath=/dev/null'")
 
--- vim.cmd("set fillchars+=vert:\\ ")
+vim.cmd("set fillchars+=vert:\\ ")

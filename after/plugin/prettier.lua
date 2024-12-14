@@ -128,7 +128,7 @@ local function filterReactDTS(value)
   return true
 end
 
-lspconfig.tsserver.setup({
+lspconfig.ts_ls.setup({
   commands = {
     OrganizeImports = {
       organize_imports,

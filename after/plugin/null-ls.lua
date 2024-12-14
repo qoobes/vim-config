@@ -1,7 +1,4 @@
---- WARNING: null-ls has been deprecated / archived, but I use it until it breaks
-
 local null_ls = require("null-ls")
-
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 null_ls.setup({
@@ -10,16 +7,20 @@ null_ls.setup({
   on_attach = function(client, bufnr)
     if client.supports_method("textDocument/formatting") then
       vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-      vim.api.nvim_create_autocmd("BufWritePre", {
-        group = augroup,
-        buffer = bufnr,
-        callback = function()
-          vim.lsp.buf.format({ async = false }) -- NOTE: Switch to sync if it becomes an issue
-        end,
-      })
+      vim.keymap.set("n", "<leader>f", function()
+        vim.lsp.buf.format({ async = true }) -- NOTE: Switch to sync if it becomes an issue
+      end)
+      vim.keymap.set("v", "<leader>f", function()
+        vim.lsp.buf.format({
+          async = true,
+          range = {
+            ["start"] = vim.api.nvim_buf_get_mark(0, "<"),
+            ["end"] = vim.api.nvim_buf_get_mark(0, ">"),
+          },
+        })
+      end, { buffer = bufnr })
     end
   end,
-
   sources = {
     null_ls.builtins.formatting.prettierd.with({
       env = {
@@ -27,10 +28,12 @@ null_ls.setup({
       },
     }),
     null_ls.builtins.formatting.stylua,
-    require("none-ls.diagnostics.eslint_d"),
+    require("none-ls.diagnostics.eslint_d").with({
+      diagnostics_format = "[eslint] #{m}",
+    }),
     require("none-ls.code_actions.eslint_d"),
     null_ls.builtins.code_actions.gitsigns,
-    null_ls.builtins.formatting.prismaFmt,
+    -- null_ls.builtins.formatting.prismaFmt,
     null_ls.builtins.formatting.remark,
     -- go formatting
     null_ls.builtins.code_actions.gomodifytags,

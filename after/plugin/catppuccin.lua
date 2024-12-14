@@ -9,7 +9,7 @@ require("catppuccin").setup({
     },
     treesitter = true,
     notify = true,
-    noice = true,
+    -- noice = true,
     mini = {
       enabled = true,
       indentscope_color = "",

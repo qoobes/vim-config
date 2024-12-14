@@ -68,7 +68,7 @@ return require("packer").startup(function(use)
   -- use({ "zbirenbaum/copilot.lua" })
 
   use("onsails/lspkind.nvim")
-  use("nvim-lualine/lualine.nvim")
+  -- use("nvim-lualine/lualine.nvim")
   -- use("AndreM222/copilot-lualine")
 
   use("nvim-tree/nvim-web-devicons")
@@ -84,7 +84,7 @@ return require("packer").startup(function(use)
   use("fsouza/prettierd")
   use("stevearc/dressing.nvim")
   use("MunifTanjim/nui.nvim")
-  use("folke/noice.nvim")
+  -- use("folke/noice.nvim")
   use("tpope/vim-surround")
   use("wakatime/vim-wakatime")
 
@@ -162,4 +162,12 @@ return require("packer").startup(function(use)
 
   -- ai stuff
   use("frankroeder/parrot.nvim")
+
+  use({
+    "epwalsh/obsidian.nvim",
+    tag = "*",
+    requires = {
+      "nvim-lua/plenary.nvim",
+    },
+  })
 end)
