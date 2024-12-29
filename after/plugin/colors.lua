@@ -49,8 +49,8 @@ function ColorMyPencils(color, blackout)
       palette = {
         -- Override the builtin palette per variant
         moon = {
-          base = "#000000",
-          overlay = "#000000",
+          base = "none",
+          overlay = "none",
         },
       },
 
@@ -92,7 +92,7 @@ function ColorMyPencils(color, blackout)
 
   if blackout == true then
     vim.cmd.highlight("Normal", "guibg=black", "ctermbg=black")
-    vim.api.nvim_set_hl(1, "Normal", { bg = "#000000" })
+    vim.api.nvim_set_hl(1, "Normal", { bg = "none" })
     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
   end
 end
@@ -102,7 +102,7 @@ end
 --
 -- ColorMyPencils("tokyonight")
 
-ColorMyPencils("catppuccin-mocha", true)
+ColorMyPencils("catppuccin-mocha", false)
 vim.defer_fn(function()
-  ColorMyPencils("catppuccin-mocha", true)
+  ColorMyPencils("catppuccin-mocha", false)
 end, 1000)

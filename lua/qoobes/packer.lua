@@ -2,7 +2,6 @@
 vim.cmd([[packadd packer.nvim]])
 
 return require("packer").startup(function(use)
-  -- Packer can manage itself
   use("wbthomason/packer.nvim")
 
   use({
@@ -17,21 +16,12 @@ return require("packer").startup(function(use)
   use({
     "nvim-telescope/telescope.nvim",
     tag = "0.1.5",
-    -- or                            , branch = '0.1.x',
     requires = { { "nvim-lua/plenary.nvim" } },
   })
 
-  -- Colourschemes
   use({ "rose-pine/neovim", as = "rose-pine" })
   use({ "catppuccin/nvim", as = "catppuccin" })
-  -- use("lunarvim/darkplus.nvim")
-  -- use("lunarvim/synthwave84.nvim")
   use("folke/tokyonight.nvim")
-  -- use("Mofiqul/vscode.nvim")
-  -- use("marko-cerovac/material.nvim")
-  -- use("lunarvim/colorschemes")
-
-  -- use 'rebelot/kanagawa.nvim'
 
   use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
 
