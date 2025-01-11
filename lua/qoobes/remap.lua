@@ -45,6 +45,14 @@ keymap("n", "<M-Right>", ":vertical resize -2<cr>", opts)
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<leader>w", ":Bdelete<CR>", opts)
+keymap(
+  "n",
+  "<leader>bcl",
+  "<cmd>BufferLineCloseOthers<CR>",
+  getOpts({
+    desc = "Close all buffers except for current",
+  })
+)
 
 --- Mpa ctrl c to esc
 keymap("i", "<C-c>", "<Esc>", opts)

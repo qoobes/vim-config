@@ -25,7 +25,11 @@ return require("packer").startup(function(use)
 
   use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
 
-  use("theprimeagen/harpoon")
+  use({
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    requires = { { "nvim-lua/plenary.nvim" } },
+  })
 
   use("tpope/vim-fugitive")
 
@@ -160,4 +164,14 @@ return require("packer").startup(function(use)
       "nvim-lua/plenary.nvim",
     },
   })
+
+  -- use({
+  --   "yetone/avante.nvim",
+  --   build = "make",
+  --   requires = {
+  --     "stevearc/dressing.nvim",
+  --     "nvim-lua/plenary.nvim",
+  --     "MunifTanjim/nui.nvim",
+  --   },
+  -- })
 end)

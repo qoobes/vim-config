@@ -9,7 +9,7 @@ vim.keymap.set("n", "<leader>pf", builtin.find_files, {})
 -- )
 vim.keymap.set("n", "<C-p>", builtin.find_files, {})
 vim.keymap.set("n", "<leader>pg", builtin.live_grep, {})
--- vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
+vim.keymap.set("n", "<c-b>", builtin.buffers, {})
 -- vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
 
 -- local fb_actions = require "telescope".extensions.file_browser.actions

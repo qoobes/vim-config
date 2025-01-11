@@ -29,6 +29,8 @@ vim.opt.scrolloff = 10
 
 vim.g.mapleader = " "
 
+vim.cmd("set showtabline=0")
+
 vim.cmd("set spr")
 vim.cmd("set hidden")
 
